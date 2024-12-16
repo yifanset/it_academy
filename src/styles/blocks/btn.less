@@ -23,4 +23,30 @@
     background-color: #1f1e1e;
     color: #FFFF;
     }
+    &-orange{
+        background-color: @red;
+        border: none;
+        color: @white;
+        transition: background-color 0.2s;
+    }
+    &-orange:hover,
+    &-orange:active{
+        background-color: @red_dark;
+    }
+}
+
+
+.btn1__i-want{
+    font-family: @font2;
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: @black;
+}
+
+.btn1__btn-row{
+    display: flex;
+    flex-direction: row;
+    gap: 106.12px;
+    padding-top: 30px;
 }
