@@ -35,9 +35,9 @@ const resources = {
     "src/assets/icons/**/*.*",
     "src/assets/favicons/**/*.*",
     "src/assets/fonts/**/*.{woff,woff2}",
-    "src/assets/video/**/*.{mp4,webm}",
-    "src/assets/audio/**/*.{mp3,ogg,wav,aac}",
-    // "src/json/**/*.json",
+    // "src/assets/video/**/*.{mp4,webm}",
+    // "src/assets/audio/**/*.{mp3,ogg,wav,aac}",
+    // "src/json/**/*.json", 
     // "src/php/**/*.php"
   ]
 };
@@ -108,17 +108,26 @@ function jsCopy() {
     .pipe(gulp.dest("dist/scripts"));
 }
 
+// function copy() {
+//   return gulp
+//     .src(resources.static, {
+//       base: "src"
+//     })
+//     .pipe(gulp.dest("dist/"));
+// }
+
 function copy() {
   return gulp
     .src(resources.static, {
-      base: "src"
+      base: "src",
+      encoding: false
     })
     .pipe(gulp.dest("dist/"));
 }
 
 function images() {
   return gulp
-    .src(resources.images)
+    .src(resources.images, { encoding: false })
     .pipe(
       imagemin([
         imagemin_gifsicle({ interlaced: true }),

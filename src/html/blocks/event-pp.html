@@ -1,0 +1,44 @@
+<!-- Pop-up - форма, которую заполняет клиент. -->
+<div class="pp">
+    <div class="pp_wrapper form">
+        <div class="pp-stiky-close">
+            <button
+             type="button"
+             title="Закрыть"
+             class="pp__x-btn x-btn js-ppCloseBtn"
+            >
+            </button>
+        </div>
+
+        <div class="pp__container">
+            <h2 class="pp__title">Заполните форму <br /> и мы подберем площадку</h2>
+
+            <form class="pp__form form">
+                <label class="field">
+                    <span class="field_span">Имя</span>
+                    <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Имя" 
+                    class="field__input" 
+                    required/>
+                </label>
+
+                <label class="field">
+                    <span class="field__title">
+                        Планируемое количество посетителей:
+                    </span>
+                    <select name="amount" class="fiend__select">
+                        <option value="20">до 20 человек</option>
+                        <option value="50">от 20 до 100 человек</option>
+                        <option value="100">от 100 до 500 человек</option>
+                        <option value="1000">более 500 человек</option>
+                    </select>
+                </label>
+                
+            </form>
+        </div>
+
+    </div>
+
+</div>

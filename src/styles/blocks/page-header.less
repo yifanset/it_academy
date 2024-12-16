@@ -37,7 +37,7 @@
     &__nav{
         display: flex;
         align-items: baseline;
-        // margin: 0 auto;
+        margin: 0 auto;
         gap: 50px;
     }
 
@@ -61,5 +61,10 @@
         justify-content: flex-end;
         align-items: center;
         width: 202px;
+    }
+
+    @supports (backdrop-filter: blur(20px)) {
+        background-color: rgba(222, 222, 222, 0.5);
+        backdrop-filter: blur(20px);
     }
 }
