@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: @gray;
-  background-image: url(../assets/images/noise.png), url(../assets/images/bg.png);
+  background-image: url(../assets/images/noise.jpg), url(../assets/images/fon1.jpg);
   background-position: 0 0, 0 0;
   background-size: auto, 100% auto;
   background-repeat: repeat, repeat-y;
@@ -24,6 +24,14 @@ body {
   line-height: 1.375;
   overflow-x: hidden;
   padding-top: 147px;
+  @media @bw1660{
+    height: 111px;
+  }
+
+  @media @bw768{
+    height: 70px;
+  }
+
 }
 
 .main {

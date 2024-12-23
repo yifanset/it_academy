@@ -1,3 +1,5 @@
+// Мои попытки победить кнопки
+
 .btn {
     display: inline-flex;
     justify-content: center;
@@ -33,6 +35,13 @@
     &-orange:active{
         background-color: @red_dark;
     }
+
+    &-shownow:hover,
+    &-orange:active{
+        opacity: 0.3;
+    }
+
+
 }
 
 
@@ -44,9 +53,18 @@
     color: @black;
 }
 
+.btn1__show-now{
+    font-family: @font1;
+    font-weight: 600;
+    font-size: 16px;
+    // text-transform: uppercase;
+    color: @black;
+}
+
 .btn1__btn-row{
     display: flex;
     flex-direction: row;
     gap: 106.12px;
     padding-top: 30px;
+    // margin-bottom: 300px;
 }

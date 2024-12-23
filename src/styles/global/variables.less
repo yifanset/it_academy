@@ -1,12 +1,48 @@
-   //Тут хранятся переменные
+   //Переменные
+
    // Цветовая палитра
    @white: #ffffff;
    @black: #1f1f1e;
    @red: #bc3324;
    @red_dark: #a51505;
    @gray: #dedede;
-   @gray_dark: #bfbfbf;
+   @gray_dark: #bfbfbf; // Цвет для таблиц
+
    // Шрифты
    @font1: "Open Sans", sans-serif;
    @font2: "Lora", serif;
    @font3: "mak", serif;
+   
+   // Медиавыражения для адаптивной верстки:
+   // Точки перелома - поведение верстки при уменьшении
+   // размера интерефейса в ширину до значения медиавыражения.
+
+   @bw320: ~"(max-width: 319px)"; // Боковой отступ 20px
+   @bw370: ~"(max-width: 370px)";
+   @bw400: ~"(max-width: 399px)";
+   @bw500: ~"(max-width: 499px)";
+   @bw600: ~"(max-width: 599px)";
+   @bw650: ~"(max-width: 649px)";
+   @bw700: ~"(max-width: 699px)";
+   @bw768: ~"(max-width: 767px)"; // Боковой отступ 30px
+   @bw960: ~"(max-width: 959px)";
+   @bw1020: ~"(max-width: 1019px)";
+   @bw1340: ~"(max-width: 1339px)"; // Боковой отступ 40px
+   @w1020: ~"(min-width: 1020px)";
+
+   @w1340: ~"(max-width: 1340px)";
+   @bw1660: ~"(max-width: 1659px)";
+   @w1660: ~"(min-width: 1660px)";
+
+   @full-hd: ~"(min-width: 1920px)";
+   @retina: ~"(min-resolution: 144dpi), (min-resolution: 1.5dppx)";
+   @landscape: ~"(orientation: landscape)";
+   @landscape-mobile: ~"(max-width: 767px) and (orientation: landscape)"; 
+
+   // Точки перелома   
+   // 320px (смартфоны);
+   // 768px (Apple iPad);
+   // 1024px (Apple iPad Pro);
+   // 1170px (десктоп);
+   // 1340px (огромное количество ноутбуков с шириной экрана 1368px);
+   // 1510px (MacBook Pro 16: 1536px, большое количество десктоп-мониторов шириной 1600px).

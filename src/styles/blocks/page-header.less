@@ -10,6 +10,14 @@
     backdrop-filter: blur(20px);
     z-index: 100;
 
+    @media @bw1660{
+        height: 111px;
+    }
+    
+    @media @bw768{
+        height: 70px;
+    }
+
     &__container{
         box-sizing: border-box;
         display: flex;
@@ -27,6 +35,19 @@
         height: 147px;
         font-size: 0;
         text-decoration: none;
+        z-index: 1;
+        @media @bw1660{
+            width: 152px;
+            height: 111px;
+        }
+        @media @bw768{
+            width: 96px;
+            height: 70px;
+        }
+        @media @bw400{
+            margin-left: -20px;
+        }
+    
     }
 
     &__logo-icon{
@@ -35,10 +56,25 @@
     }
 
     &__nav{
+        box-sizing: border-box;
         display: flex;
         align-items: baseline;
         margin: 0 auto;
         gap: 50px;
+        @media @bw1020{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 211px 30px 30px;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            height: 100vh;
+            background-color: fade(@gray, 98%);
+            transform: translateX(-100%);
+            // transform: translateX(0);
+            transition: transform 0.4s;
+        }
     }
 
     &__nav-link{
@@ -47,13 +83,38 @@
         font-weight: 600;
         font-size: 18px;
         text-decoration: none;
-        line-height: 1.3;
+        line-height: 1.4;
         transition: color 0.2s;
+        @media @bw1020{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 5px 0;
+            font-size: 16px;
+        }
+
 
         &:hover,
         &:active {
-        color: #bc3324;
+        color: @red_dark;
         }
+    }
+
+    &__nav-user-link{
+        display: none;
+        margin-top: 30px;
+        margin-right: 25px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        @media @bw1020{
+            display: flex;
+        }
+    }
+
+    &__nav-logout{
+        width: 24px;
+        height: 24px;
+        font-size: 0;
     }
 
     &__right-block{
@@ -61,10 +122,121 @@
         justify-content: flex-end;
         align-items: center;
         width: 202px;
+        @media @bw1660 {
+            width: 1110px;
+        }
+        @media @bw1020{
+            margin-left: auto;
+            width: auto;
+            gap: 30px;
+        }
     }
 
     @supports (backdrop-filter: blur(20px)) {
         background-color: rgba(222, 222, 222, 0.5);
         backdrop-filter: blur(20px);
     }
+
+    &__btn{
+        z-index: 1;
+        @media @bw1020{
+            display: none;
+        }
+    }
+
+    &__user-btn{
+        max-width: 100%;
+        display: inline-flex;
+        justify-content: center; 
+        align-items: center; 
+        box-sizing: border-box;
+        padding: 15px 40px;
+        border: 1px solid @black;
+        background-color: transparent;
+        outline: none;
+        color: @black; 
+        font-weight: 600; 
+        font-size: 16px; 
+        line-height: 20px; 
+        text-align: center; 
+        text-decoration: none;
+        transition: color 0.25, background-color 0.2s, border-color 0.2s;
+        overflow: hidden; 
+        cursor: pointer;
+        &:active {
+            background-color: @black;
+            color: @white;
+        }
+        &:hover{
+            @media @bw1020{
+                display: none;
+                font-size: 0;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .btn{
+            @media @bw1020{
+                display: none;
+                font-size: 0;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+    }
+
+    &__user-icon{
+        display: none;
+        @media @bw1020{
+            display: block;
+            margin-left: 30px;
+        }
+    }
+    
+    &__nav-toggle{
+        display: none;
+        @media @bw1020{
+            display: block;
+            position: relative;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            border: 0;
+            width: 40px;
+            height: 40px;
+        }
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: @black;                
+        }
+        &::before{
+            top: 13px;
+        }
+        &::after{
+            bottom: 13px;
+        }
+    }
+
+    &__nav-toggle-line{
+        position: absolute;
+        margin-top: -1px; // отцентровка среднего элемента (половина от отступов + отрицательная)
+        top: 50%;
+        left: 10px;
+        width: 20px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: @black;     
+    }
+
+        
+
+    
+
 }

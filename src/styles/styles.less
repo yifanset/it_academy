@@ -1,64 +1,60 @@
-// @import "global/variables.less";
-// @import "global/mixins.less";
-// @import "global/fonts.less";
-// @import "global/common.less";
-// @import "blocks/btn.less";
-// @import "blocks/field.less";
-// @import "blocks/form.less";
-// @import "blocks/pp.less";
-// @import "blocks/page-header.less";
+// @import "vendor/swiper.less"; <- шаблончик для подключения стилей.
+
+//------------global styles---------------
 
 @import "global/variables.less";
-@import "global/mixins.less";
 @import "global/fonts.less";
 @import "global/common.less";
-@import "blocks/btn.less";
-@import "blocks/field.less";
-@import "blocks/form.less";
-@import "blocks/pp.less";
-@import "blocks/article-card.less";
-@import "blocks/home.less";
+@import "global/animation.less";
+
+
+//-------------block styles----------------
+
+// Стили "Мероприятия".
 @import "blocks/event-card.less";
 @import "blocks/events.less";
+@import "blocks/article-card.less";
+
+// Стили для всех вкладок.
+@import "blocks/btn.less";
+@import "blocks/section-title.less";
 @import "blocks/listing.less";
-
-// @import "blocks/radio.less";
-// @import "blocks/check.less";
+@import "blocks/reserve.less";
 
 
+// Стили навигации-шапки.
 @import "blocks/page-header.less";
 
+// Стили днища.
+@import "blocks/page-footer.less";
+
+
+// Стили главной страницы.
+@import "blocks/home.less";
 @import "blocks/main.less";
-@import "blocks/section-title.less";
+
+
+// Стили "О нас".
 @import "blocks/about-us.less";
-
-// @import "global/variables.less";
-// @import "global/fonts.less";
-// @import "global/common.less";
-// @import "global/mixins.less";
+@import "blocks/about.less";
 
 
-// // @import "vendor/swiper.less"; <- сюда импортируем каждый стильно по этому шаблону
 
-// @import "blocks/btn.less";
-// @import "blocks/section-title.less";
+// Стили для формы.
+@import "blocks/field.less";
+@import "blocks/pp.less";
+@import "blocks/radio.less";
+@import "blocks/checkbox.less";
+@import "blocks/form.less";
 
-// @import "blocks/home.less";
-// @import "blocks/article-card.less";
+// Стили для таблиц.
+@import "blocks/table.less";
+
+// Стили текстового редактора.
+@import "blocks/content.less";
+@import "blocks/article.less";
 
 
-// @import "blocks/event-card.less";
-
-// @import "blocks/listing.less";
-// @import "blocks/reserve.less";
-
-// @import "blocks/events.less";
-// @import "blocks/event.less";
-
-// @import "blocks/page-header.less";
-// @import "blocks/page-footer.less";
-
-// @import "blocks/field.less";
-// @import "blocks/pp.less";
-// @import "blocks/form.less";
+// Миксины всегда внизу, хз почему.
+@import "global/mixins.less";
 

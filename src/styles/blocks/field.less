@@ -50,4 +50,27 @@
         line-height: 1.3;
         color: @black;
     }
+
+    &__date-inputs{
+        display: flex;
+        gap: 15px;//отступы между элементами
+    }
+
+    &__date-input{
+        box-sizing: border-box;
+        display: block;
+        border: none;
+        border-radius: 5px;
+        background-color: @white;
+        font-size: 16px;
+        line-height: 1.375;
+        text-align: center; //tac - укороченная
+        width: 55px;
+        height: 55px;
+        padding: 17px 13px 16px; //p17-13-15 - укороченная
+        &--w110{
+            width: 110px;
+        }
+    }
+
 }
