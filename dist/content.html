@@ -2,6 +2,7 @@
 <html lang="ru">
 
 <head>
+  <title>vitaliy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800&display=swap" rel="stylesheet">
@@ -28,10 +29,9 @@
 
         <a href="#" class="page-header__nav-user-link">
           Александр С.
-          <!-- <svg class="page-header__user-icon" width="24" height="24" >
-                    <use src="assets/images/logout.svg"></use>
-                </svg> -->
-          <img src="assets/images/logout.svg" class="page-header__user-icon" />
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#door"></use>
+          </svg>
         </a>
 
       </nav>
@@ -41,24 +41,38 @@
             <a href="#" class="page-header__nav-link">Александр С.</a>
         </div> -->
 
-      <!-- <button type="button" class="page-header__btn btn">Войти</button> -->
+      <!-- <div class="page-header__right-block">
+            <a href="#" class="btn page-header__user-btn">
+                Войти
+                <svg class="page-header__user-icon" width="24" height="24">
+                    <use xlink:href="assets/icons/symbols.svg#user"></use>
+                </svg>
+            </a>
+        
+            <button
+              type="button"
+              class="page-header__nav-toggle"
+              id="js-navTogg1e">
+              <div class="page-header__nav-toggle-line"></div>
+            </button>
+        </div> -->
 
       <div class="page-header__right-block">
-        <a href="#" class="page-header__user-btn btn">
-          Войти
-
-          <!-- <svg class="page-header__user-icon" width="21" height="18">
-                    <use xlink:href="assets/icons/symbols.svg#user"></use>
+        <a href="#" class="btn page-header__btn">Войти</a>
+        <!-- <svg class="page-header__user-icon" width="24" height="24">
+                  <use xlink:href="assets/icons/symbols.svg#user"></use>
                 </svg> -->
+        <img src="assets/icons/user.svg" class="page-header__user-icon" width="24" height="24" />
 
-          <img src="assets/images/user-check.svg" class="page-header__user-icon" />
 
-          </а>
 
-          <button type="button" class="page-header__nav-toggle" id="js-navTogg1e">
-            <div class="page-header__nav-toggle-line"></div>
-          </button>
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle">
+          <div class="page-header__nav-toggle-line"></div>
+        </button>
       </div>
+
+      <div>
+
   </header>
 
 

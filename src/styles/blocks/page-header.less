@@ -47,7 +47,6 @@
         @media @bw400{
             margin-left: -20px;
         }
-    
     }
 
     &__logo-icon{
@@ -62,6 +61,7 @@
         margin: 0 auto;
         gap: 50px;
         @media @bw1020{
+            margin: 0;
             position: absolute;
             top: 0;
             left: 0;
@@ -76,6 +76,8 @@
             transition: transform 0.4s;
         }
     }
+
+    // весь экран - viewport
 
     &__nav-link{
         margin: 0 25px;
@@ -144,55 +146,105 @@
         }
     }
 
+    // &__user-btn{
+    //     max-width: 100%;
+    //     display: inline-flex;
+    //     justify-content: center; 
+    //     align-items: center; 
+    //     box-sizing: border-box;
+    //     padding: 15px 40px;
+    //     border: 1px solid @black;
+    //     background-color: transparent;
+    //     outline: none;
+    //     color: @black; 
+    //     font-weight: 600; 
+    //     font-size: 16px; 
+    //     line-height: 20px; 
+    //     text-align: center; 
+    //     text-decoration: none;
+    //     transition: color 0.25, background-color 0.2s, border-color 0.2s;
+    //     overflow: hidden; 
+    //     cursor: pointer;
+    //     &:active {
+    //         background-color: @black;
+    //         color: @white;
+    //     }
+    //     &:hover{
+    //         @media @bw1020{
+    //             display: none;
+    //             font-size: 0;
+    //             width: 40px;
+    //             height: 40px;
+    //         }
+    //     }
+    //     .btns{
+    //         @media @bw1020{
+    //             display: none;
+    //             font-size: 0;
+    //             width: 40px;
+    //             height: 40px;
+    //         }
+    //     }
+        
+    // }
+
     &__user-btn{
         max-width: 100%;
         display: inline-flex;
-        justify-content: center; 
-        align-items: center; 
-        box-sizing: border-box;
+        justify-content: center;
         padding: 15px 40px;
         border: 1px solid @black;
         background-color: transparent;
-        outline: none;
-        color: @black; 
-        font-weight: 600; 
-        font-size: 16px; 
-        line-height: 20px; 
-        text-align: center; 
+        color: @black;
+        font-family: @font1;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
         text-decoration: none;
-        transition: color 0.25, background-color 0.2s, border-color 0.2s;
-        overflow: hidden; 
+        transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+        overflow: hidden;
         cursor: pointer;
-        &:active {
-            background-color: @black;
-            color: @white;
+        &:active{
+           background-color: @black;
+           color: @white;
         }
-        &:hover{
-            @media @bw1020{
-                display: none;
-                font-size: 0;
-                width: 40px;
-                height: 40px;
-            }
+        &:hover {
+        background-color: @black;
+        color: @white;
         }
-        .btn{
-            @media @bw1020{
-                display: none;
-                font-size: 0;
-                width: 40px;
-                height: 40px;
-            }
+        @media @bw1020{
+           margin-right: -8px;
+           margin-top: 16px;
+           border: none;
+           font-size: 0;
+           width: 40px;
+           height: 40px;
+           padding: 0;
+           &:hover {
+              background-color: transparent;
+           }
         }
-        
-    }
+      }
 
     &__user-icon{
         display: none;
         @media @bw1020{
             display: block;
-            margin-left: 30px;
+            // margin-left: 30px;
         }
     }
+
+    &__nav-user-link{
+        display: none;
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        @media @bw1020 {
+           display: flex;
+        }
+     }
     
     &__nav-toggle{
         display: none;
@@ -234,9 +286,4 @@
         border-radius: 2px;
         background-color: @black;     
     }
-
-        
-
-    
-
 }

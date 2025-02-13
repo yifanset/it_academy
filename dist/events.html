@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <title>vitaliy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800&display=swap" rel="stylesheet">
@@ -28,10 +29,9 @@
 
         <a href="#" class="page-header__nav-user-link">
           Александр С.
-          <!-- <svg class="page-header__user-icon" width="24" height="24" >
-                    <use src="assets/images/logout.svg"></use>
-                </svg> -->
-          <img src="assets/images/logout.svg" class="page-header__user-icon" />
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#door"></use>
+          </svg>
         </a>
 
       </nav>
@@ -41,24 +41,38 @@
             <a href="#" class="page-header__nav-link">Александр С.</a>
         </div> -->
 
-      <!-- <button type="button" class="page-header__btn btn">Войти</button> -->
+      <!-- <div class="page-header__right-block">
+            <a href="#" class="btn page-header__user-btn">
+                Войти
+                <svg class="page-header__user-icon" width="24" height="24">
+                    <use xlink:href="assets/icons/symbols.svg#user"></use>
+                </svg>
+            </a>
+        
+            <button
+              type="button"
+              class="page-header__nav-toggle"
+              id="js-navTogg1e">
+              <div class="page-header__nav-toggle-line"></div>
+            </button>
+        </div> -->
 
       <div class="page-header__right-block">
-        <a href="#" class="page-header__user-btn btn">
-          Войти
-
-          <!-- <svg class="page-header__user-icon" width="21" height="18">
-                    <use xlink:href="assets/icons/symbols.svg#user"></use>
+        <a href="#" class="btn page-header__btn">Войти</a>
+        <!-- <svg class="page-header__user-icon" width="24" height="24">
+                  <use xlink:href="assets/icons/symbols.svg#user"></use>
                 </svg> -->
+        <img src="assets/icons/user.svg" class="page-header__user-icon" width="24" height="24" />
 
-          <img src="assets/images/user-check.svg" class="page-header__user-icon" />
 
-          </а>
 
-          <button type="button" class="page-header__nav-toggle" id="js-navTogg1e">
-            <div class="page-header__nav-toggle-line"></div>
-          </button>
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle">
+          <div class="page-header__nav-toggle-line"></div>
+        </button>
       </div>
+
+      <div>
+
   </header>
 
 
@@ -69,104 +83,111 @@
           Мероприятия
         </h2>
         <div class="listing__events-list">
-          <article class="event-card listing__event-card">
-            <a href="default.html" class="event-card__link">
-              <picture class="event-card__picture">
-                <img class="event-card__img" src="assets/images/card1.jpg" alt="card" />
-              </picture>
-              <h4 class="event-card__title">
-                Собираемся и слушаем альбом Nirvana. Nirvana
-              </h4>
-              <p class="event-card__text">
-                Это третий альбом группы, выпущенный после смерти Курта
-                Кобейна и первый, содержащий студийный материал.
-              </p>
-              <time class="event-card__time" datetime="2022-12-07T18:00">07.12.2022 | начало 18.00</time>
-            </a>
-          </article>
+          <div class="listing__events-list">
+            <article class="event-card listing__event-card">
+              <a href="default.html" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img class="event-card__img" src="assets/images/card1.jpg" alt="card" />
+                </picture>
+                <h4 class="event-card__title">
+                  Собираемся и слушаем альбом Nirvana. Nirvana
+                </h4>
+                <p class="event-card__text">
+                  Это третий альбом группы, выпущенный после смерти Курта
+                  Кобейна и первый, содержащий студийный материал.
+                </p>
+                <time class="event-card__time" datetime="2022-12-07T18:00">07.12.2022 | начало 18.00</time>
+              </a>
+            </article>
 
-          <article class="event-card listing__event-card">
-            <a href="#" class="event-card__link">
-              <picture class="event-card__picture">
-                <img class="event-card__img" src="assets/images/card2.jpg" alt="card" />
-              </picture>
-              <h4 class="event-card__title">
-                Есть тема, нужно обсудить с HowStuffWorks
-              </h4>
-              <p class="event-card__text">
-                Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
-              </p>
-              <time class="event-card__time" datetime="2022-12-14T18:30">14.12.2022 | начало 18.30</time>
-            </a>
-          </article>
+            <article class="event-card listing__event-card">
+              <a href="#" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img class="event-card__img" src="assets/images/card2.jpg" alt="card" />
+                </picture>
+                <h4 class="event-card__title">
+                  Есть тема, нужно обсудить с HowStuffWorks
+                </h4>
+                <p class="event-card__text">
+                  Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+                </p>
+                <time class="event-card__time" datetime="2022-12-14T18:30">14.12.2022 | начало 18.30</time>
+              </a>
+            </article>
 
-          <article class="event-card listing__event-card">
-            <a href="#" class="event-card__link">
-              <picture class="event-card__picture">
-                <img class="event-card__img" src="assets/images/card3.jpg" alt="card" />
-              </picture>
-              <h4 class="event-card__title">
-                Вечер | The Best of Sade
-              </h4>
-              <p class="event-card__text">
-                Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.
-              </p>
-              <time class="event-card__time" datetime="2022-12-16T20:00">16.12.2022 | начало 20.00</time>
-            </a>
-          </article>
+            <article class="event-card listing__event-card">
+              <a href="#" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img class="event-card__img" src="assets/images/card3.jpg" alt="card" />
+                </picture>
+                <h4 class="event-card__title">
+                  Вечер | The Best of Sade
+                </h4>
+                <p class="event-card__text">
+                  Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.
+                </p>
+                <time class="event-card__time" datetime="2022-12-16T20:00">16.12.2022 | начало 20.00</time>
+              </a>
+            </article>
 
-          <article class="event-card listing__event-card">
-            <a href="#" class="event-card__link">
-              <picture class="event-card__picture">
-                <img class="event-card__img" src="assets/images/card4.jpg" alt="card" />
-              </picture>
-              <h4 class="event-card__title">
-                Выставка Малевича в Томске
-              </h4>
-              <p class="event-card__text">
-                Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займёт два этажа павильона.
-              </p>
-              <time class="event-card__time" datetime="2022-12-25T20:00">25.12.2022 | начало 20.00</time>
-            </a>
-          </article>
+            <article class="event-card listing__event-card">
+              <a href="#" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img class="event-card__img" src="assets/images/card4.jpg" alt="card" />
+                </picture>
+                <h4 class="event-card__title">
+                  Выставка Малевича в Томске
+                </h4>
+                <p class="event-card__text">
+                  Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займёт два этажа павильона.
+                </p>
+                <time class="event-card__time" datetime="2022-12-25T20:00">25.12.2022 | начало 20.00</time>
+              </a>
+            </article>
 
-          <article class="event-card listing__event-card">
-            <a href="#" class="event-card__link">
-              <picture class="event-card__picture">
-                <img class="event-card__img" src="assets/images/card5.jpg" alt="card" />
-              </picture>
-              <h4 class="event-card__title">
-                Мастер — класс по студийной съемке от Tatler
-              </h4>
-              <p class="event-card__text">
-                Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.
-              </p>
-              <time class="event-card__time" datetime="2022-12-07T13:00">07.12.2022 | начало 13.00</time>
-            </a>
-          </article>
+            <article class="event-card listing__event-card">
+              <a href="#" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img class="event-card__img" src="assets/images/card5.jpg" alt="card" />
+                </picture>
+                <h4 class="event-card__title">
+                  Мастер — класс по студийной съемке от Tatler
+                </h4>
+                <p class="event-card__text">
+                  Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.
+                </p>
+                <time class="event-card__time" datetime="2022-12-07T13:00">07.12.2022 | начало 13.00</time>
+              </a>
+            </article>
 
-          <article class="event-card listing__event-card">
-            <a href="#" class="event-card__link">
-              <picture class="event-card__picture">
-                <img class="event-card__img" src="assets/images/card6.jpg" alt="card" />
-              </picture>
-              <h4 class="event-card__title">
-                Повесилимся на славу на концерте The Hatters
-              </h4>
-              <p class="event-card__text">
-                Российская джипси-фолк-рок группа, основанная в 2016 году в Санкт-Петербурге. В основной состав группы входят Юрий Музыченко
-              </p>
-              <time class="event-card__time" datetime="2022-12-27T08:00">27.12.2022 | начало 10.00</time>
-            </a>
-          </article>
+            <article class="event-card listing__event-card">
+              <a href="#" class="event-card__link">
+                <picture class="event-card__picture">
+                  <img class="event-card__img" src="assets/images/card6.jpg" alt="card" />
+                </picture>
+                <h4 class="event-card__title">
+                  Повесилимся на славу на концерте The Hatters
+                </h4>
+                <p class="event-card__text">
+                  Российская джипси-фолк-рок группа, основанная в 2016 году в Санкт-Петербурге. В основной состав группы входят Юрий Музыченко
+                </p>
+                <time class="event-card__time" datetime="2022-12-27T08:00">27.12.2022 | начало 10.00</time>
+              </a>
+            </article>
+          </div>
         </div>
-        <div class="main__btns">
-          <h3 class="btn1__show-now">Показать еще</h3>
-          <a class="btn-shownow" href="index.html">
-            <img src="assets/images/arrow-down.png" alt="Кнопка вниз">
-          </a>
-        </div>
+        <!-- <div class="main__btns"> -->
+        <!-- <h3 class="btn1__show-now">Показать еще</h3> -->
+        <h3 class="listing__showmore">Показать еще</h3>
+        <a class="btn-arrowdown" href="index.html">
+          <img src="assets/images/arrow-down.png" alt="Кнопка вниз">
+        </a>
+        <!-- </div> -->
 
+
+        <h2 class="listing__title section-title section-title__text">
+          Дополнительные услуги
+        </h2>
 
         <!-- Реализация таблиц -->
 

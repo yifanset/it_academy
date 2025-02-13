@@ -2,6 +2,7 @@
 <html lang="ru">
 
 <head>
+  <title>vitaliy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800&display=swap" rel="stylesheet">
@@ -28,10 +29,9 @@
 
         <a href="#" class="page-header__nav-user-link">
           Александр С.
-          <!-- <svg class="page-header__user-icon" width="24" height="24" >
-                    <use src="assets/images/logout.svg"></use>
-                </svg> -->
-          <img src="assets/images/logout.svg" class="page-header__user-icon" />
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#door"></use>
+          </svg>
         </a>
 
       </nav>
@@ -41,39 +41,42 @@
             <a href="#" class="page-header__nav-link">Александр С.</a>
         </div> -->
 
-      <!-- <button type="button" class="page-header__btn btn">Войти</button> -->
+      <!-- <div class="page-header__right-block">
+            <a href="#" class="btn page-header__user-btn">
+                Войти
+                <svg class="page-header__user-icon" width="24" height="24">
+                    <use xlink:href="assets/icons/symbols.svg#user"></use>
+                </svg>
+            </a>
+        
+            <button
+              type="button"
+              class="page-header__nav-toggle"
+              id="js-navTogg1e">
+              <div class="page-header__nav-toggle-line"></div>
+            </button>
+        </div> -->
 
       <div class="page-header__right-block">
-        <a href="#" class="page-header__user-btn btn">
-          Войти
-
-          <!-- <svg class="page-header__user-icon" width="21" height="18">
-                    <use xlink:href="assets/icons/symbols.svg#user"></use>
+        <a href="#" class="btn page-header__btn">Войти</a>
+        <!-- <svg class="page-header__user-icon" width="24" height="24">
+                  <use xlink:href="assets/icons/symbols.svg#user"></use>
                 </svg> -->
+        <img src="assets/icons/user.svg" class="page-header__user-icon" width="24" height="24" />
 
-          <img src="assets/images/user-check.svg" class="page-header__user-icon" />
 
-          </а>
 
-          <button type="button" class="page-header__nav-toggle" id="js-navTogg1e">
-            <div class="page-header__nav-toggle-line"></div>
-          </button>
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle">
+          <div class="page-header__nav-toggle-line"></div>
+        </button>
       </div>
+
+      <div>
+
   </header>
 
 
   <main class="main">
-    <!-- <div class="home">
-    <div class="main__logo-quote">
-        <h2 class="logo-quote">Арт - пространство</h2>
-        <img
-        src = "assets/images/LENNI.svg"
-        alt = "lenni"
-        class = "logo-quote__logo"/>
-        <h2 class="logo-quote">Для людей, горящих сердцем и делом<br>Место для настоящего</h2>
-    </div>
-</div> -->
-
     <div class="main__logo-quote">
       <h2 class="main__logo-quote__quote">Арт — пространство</h2>
       <img src="assets/images/LENNI.svg" alt="lenni" class="main__logo-quote__logo" />
@@ -96,9 +99,14 @@
     </div>
     <div class="about">
       <div class="about__container">
-        <div class="about__block1"></div>
+
+        <div class="about__block1">
+          <h3 class="about__millenials">Проект "Millenials"</h3>
+          <p class="about__text1">Вдохновлен молодыми идейными людьми, увлеченными творчеством, эмоциями и желанием сделать мир лучше, проявить себя. У них есть талант и стремление, у нас возможность помочь им воплотить их мечту в реальность.</p>
+        </div>
+
         <div class="about__block2">
-          <picture class="about__picture">
+          <picture class="about__picture1">
             <img src="assets/images/pic1.jpg" alt="about1" />
           </picture>
           <h3 class="about__subtitle">
@@ -113,20 +121,141 @@
             молодым ребятам сделать первые шаги к своей мечте и рассказать
             всем о том, что их волнует.
             </р>
-          <div class="about__block3">
+            <!-- <div class="about__block3">
             <picture class="about__block3-picture">
-              <img src="assets/images/pic3.jpg" alt="about3" class="about__block3-img">
+                <img src="assets/images/pic3.jpg" alt="about3" class="about__block3-img">
             </picture>
             <div class="about__block3-text">
-              <a href="#" class="about__block3-link">
-                Смотреть
-              </a>
+                <a href="#" class="about__block3-link">
+                    Смотреть
+                </a>
             </div>
+        </div> -->
+        </div>
+
+        <div class="about__bottom">
+          <picture class="about__block3-picture">
+            <img src="assets/images/pic3.jpg" alt="about3" class="about__block3-img">
+          </picture>
+          <!-- <div class="aboutus__pics2">
+               <div class="aboutus__rectangle"></div>
+               <img src="assets/images/aboutus/fair.jpg" class="aboutus__img3"/>
+            </div> -->
+
+          <div class="about__textblock2">
+            <a class="about__textbotton">Мы уже успешно организовали и провели более 100 проектов. Посмотрите, как это было классно.</a>
+            <a href="#" class="about__btn">Смотреть
+              <!-- <svg class="aboutus__see" width="91" height="60">
+                      <use xlink:href="assets/icons/symbols.svg#see"></use>
+                   </svg> -->
+              <img src="assets/icons/see.svg" width="91" height="60" alt="about3" class="about-arrowright">
+            </a>
           </div>
+
+
+
 
         </div>
       </div>
-    </div>
+
+
+      <h2 class="listing__title section-title section-title__text">
+        Мероприятия
+      </h2>
+      <div class="events__listing--index listing">
+        <div class="listing__events-list">
+          <article class="event-card listing__event-card">
+            <a href="default.html" class="event-card__link">
+              <picture class="event-card__picture">
+                <img class="event-card__img" src="assets/images/card1.jpg" alt="card" />
+              </picture>
+              <h4 class="event-card__title">
+                Собираемся и слушаем альбом Nirvana. Nirvana
+              </h4>
+              <p class="event-card__text">
+                Это третий альбом группы, выпущенный после смерти Курта
+                Кобейна и первый, содержащий студийный материал.
+              </p>
+              <time class="event-card__time" datetime="2022-12-07T18:00">07.12.2022 | начало 18.00</time>
+            </a>
+          </article>
+
+          <article class="event-card listing__event-card">
+            <a href="#" class="event-card__link">
+              <picture class="event-card__picture">
+                <img class="event-card__img" src="assets/images/card2.jpg" alt="card" />
+              </picture>
+              <h4 class="event-card__title">
+                Есть тема, нужно обсудить с HowStuffWorks
+              </h4>
+              <p class="event-card__text">
+                Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+              </p>
+              <time class="event-card__time" datetime="2022-12-14T18:30">14.12.2022 | начало 18.30</time>
+            </a>
+          </article>
+
+          <article class="event-card listing__event-card">
+            <a href="#" class="event-card__link">
+              <picture class="event-card__picture">
+                <img class="event-card__img" src="assets/images/card3.jpg" alt="card" />
+              </picture>
+              <h4 class="event-card__title">
+                Вечер | The Best of Sade
+              </h4>
+              <p class="event-card__text">
+                Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.
+              </p>
+              <time class="event-card__time" datetime="2022-12-16T20:00">16.12.2022 | начало 20.00</time>
+            </a>
+          </article>
+
+          <article class="event-card listing__event-card">
+            <a href="#" class="event-card__link">
+              <picture class="event-card__picture">
+                <img class="event-card__img" src="assets/images/card4.jpg" alt="card" />
+              </picture>
+              <h4 class="event-card__title">
+                Выставка Малевича в Томске
+              </h4>
+              <p class="event-card__text">
+                Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займёт два этажа павильона.
+              </p>
+              <time class="event-card__time" datetime="2022-12-25T20:00">25.12.2022 | начало 20.00</time>
+            </a>
+          </article>
+
+          <article class="event-card listing__event-card">
+            <a href="#" class="event-card__link">
+              <picture class="event-card__picture">
+                <img class="event-card__img" src="assets/images/card5.jpg" alt="card" />
+              </picture>
+              <h4 class="event-card__title">
+                Мастер — класс по студийной съемке от Tatler
+              </h4>
+              <p class="event-card__text">
+                Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.
+              </p>
+              <time class="event-card__time" datetime="2022-12-07T13:00">07.12.2022 | начало 13.00</time>
+            </a>
+          </article>
+
+          <article class="event-card listing__event-card">
+            <a href="#" class="event-card__link">
+              <picture class="event-card__picture">
+                <img class="event-card__img" src="assets/images/card6.jpg" alt="card" />
+              </picture>
+              <h4 class="event-card__title">
+                Повесилимся на славу на концерте The Hatters
+              </h4>
+              <p class="event-card__text">
+                Российская джипси-фолк-рок группа, основанная в 2016 году в Санкт-Петербурге. В основной состав группы входят Юрий Музыченко
+              </p>
+              <time class="event-card__time" datetime="2022-12-27T08:00">27.12.2022 | начало 10.00</time>
+            </a>
+          </article>
+        </div>
+      </div>
 
   </main>
   <footer>

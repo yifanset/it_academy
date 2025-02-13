@@ -1,3 +1,74 @@
+.listing{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1414px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  &__events-list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      @media @bw1660{
+        gap: 40px;
+      }
+      @media @bw1020{
+        gap: 30px;
+      }
+  }
+  &__event-card{
+      width: calc(33.333% - 40px); //33% чтобы вмещалось три карточки в контейнер. 
+                                   //40px - отступ делим на количество карточек.
+      @media @bw1660{
+        width: calc(33.333% - 26.666px);
+      }
+      @media @bw1020{
+        width: calc(50% - 15px); //50% чтобы вмещалось две карточки в контейнер.
+      }
+      @media @bw650{
+        width: 100%; //100% - одна карточка.
+      }
+  }
+  &__link{
+      display: flex;
+      align-self: flex-end;
+      text-decoration: none;
+      transition: color 0.2s;
+      &:hover{
+          color: @red;
+      }
+  }
+
+  &__showmore{
+        font-family: @font1;
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: @black;
+        margin-top: 71px;
+  }
+
+
+
+  &__title{
+    // top: 30px;
+    // position: static;
+    // top: 200;
+    // left: 0;
+    // width: 100%;
+    // height: 147px;
+    // display: flex;
+    // align-items: center;
+    // z-index: 0;
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+}
+
+
 // .home {
 //     padding: 100px 0;
                 
@@ -26,64 +97,3 @@
 //       width: calc(33.333% - 40px);
 //   }
 // }
-
-.listing{
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1414px;
-  margin: 0 auto;
-  padding-left: 40px;
-  padding-right: 40px;
-
-  &__events-list{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 60px;
-      //margin-top: 120px;
-      @media @bw1660{
-        gap: 40px;
-      }
-      @media @bw1020{
-        gap: 30px;
-      }
-  }
-  &__event-card{
-      width: calc(33.333% - 40px); //33% чтобы вмещалось три карточки в контейнер. 
-                                   //40px - отступ делим на количество карточек.
-      margin: 0 30px 120px;
-      @media @bw1660{
-        width: calc(33.333% - 26.666px);
-      }
-      @media @bw1020{
-        width: calc(50% - 15px); //50% чтобы вмещалось две карточки в контейнер.
-      }
-      @media @bw650{
-        width: 100%; //100% - одна карточка.
-      }
-  }
-  &__link{
-      display: flex;
-      align-self: flex-end;
-      text-decoration: none;
-      transition: color 0.2s;
-      &:hover{
-          color: @red;
-      }
-  }
-
-
-
-  // &__title{
-  //   top: 30px;
-  //   position: static;
-  //   top: 200;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 147px;
-  //   display: flex;
-  //   align-items: center;
-  //   z-index: 0;
-  // }
-}
