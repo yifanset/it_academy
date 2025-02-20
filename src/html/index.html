@@ -5,8 +5,8 @@
     @@include('blocks/page-header.html')
     <main class="main">
       @@include('blocks/logo-quote.html')
-      @@include('blocks/i-want.html')
-      @@include('blocks/about.html')
+      @@include('blocks/offers.html')
+      @@include(('blocks/about.html'), {"class": "about__doit"})
 
       <h2 class="listing__title section-title section-title__text">
         Мероприятия
@@ -14,11 +14,15 @@
       <div class="events__listing--index listing">
         @@include('blocks/event-card.html')
       </div>
+
+      @@include('blocks/contacts.html')
       
+      @@include(('blocks/doit.html'), {"class": "home__doit"})
+
     </main>
-    <footer>
+    
     @@include('blocks/page-footer.html')
-    </footer>
+    
     @@include('blocks/event-pp.html')
     <!-- @@include('blocks/content.html') -->
     

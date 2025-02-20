@@ -3,70 +3,70 @@
   border-collapse: collapse;
   color: @black;
   text-align: center;
-  // @media @bw768{
-  //   margin: 0 -20px; // без отступов
-  //   display: block; // display: block ломает таблицу, превращает все элементы в блоки.
-  //   width: calc(100% + 40px); // окончательно подравниваем контент внутри таблицы
-  // }
-  // &__head,
-  // &__body,
-  // &__footer{
-  //   @media @bw768{
-  //     display: block;
-  //   }
-  // }
-  // &__head-tr{
-  //   @media @bw768{
-  //     display: flex;
-  //   }
-  // }
+  @media @bw768{
+    margin: 0 -20px; // без отступов
+    display: block; // display: block ломает таблицу, превращает все элементы в блоки.
+    width: calc(100% + 40px); // окончательно подравниваем контент внутри таблицы
+  }
+  &__head,
+  &__body,
+  &__footer{
+    @media @bw768{
+      display: block;
+    }
+  }
+  &__head-tr{
+    @media @bw768{
+      display: flex;
+    }
+  }
   &__tr {
     &:nth-child(2n-1) {
       background-color: fade(@black, 3%);
     }
-    // @media @bw768{
-    //   display: flex;
-    //   flex-wrap: wrap;
-    // }
+    @media @bw768{
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
   &__th {
     height: 85px;
     font-weight: 600;
     font-size: 18px;
     line-height: 25px;
-    // @media @bw768{
-    //   box-sizing: border-box;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    //   width: 33.3333%;
-    //   height: auto;
-    // }
-    // &:first-child{
-    //   @media @bw768{
-    //     display: none;
-    //   }
-    // }
+    @media @bw768{
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 33.3333%;
+      height: auto;
+    }
+    &:first-child{
+      @media @bw768{
+        display: none;
+      }
+    }
   }
   &__footer-th {
     height: 60px;
     font-size: 0;
-    // @media @bw768{
-    //   font-size: 16px;
-    // }
-    // &:first-child {
-    //   @media @bw768{
-    //     font-weight: 300;
-    //     width: 33.3333%;
-    //     display: none; 
-    //   }
-    // }  
+    @media @bw768{
+      font-size: 16px;
+    }
+    &:first-child {
+      @media @bw768{
+        font-weight: 300;
+        width: 33.3333%;
+        display: none; 
+      }
+    }  
   }
   &__th,
   &__footer-th {
     box-sizing: border-box;
     padding: 10px;
-    border-right: 1px solid @gray_dark;
+    border-right: 1px solid @grey_dark;
     text-transform: uppercase;
     &:first-child {
       padding-left: 0;
@@ -80,25 +80,25 @@
     box-sizing: border-box;
     height: 50px;
     padding: 10px 10px 10px 0;
-    border-top: 1px solid @gray_dark;
-    border-bottom: 1px solid @gray_dark;
+    border-top: 1px solid @grey_dark;
+    border-bottom: 1px solid @grey_dark;
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
     text-align: left;
-    // @media @bw768{
-    //   display: block;
-    //   width: 100%;
-    //   min-height: 50px;
-    //   height: auto;
-    //   text-align: center;
-    // }
+    @media @bw768{
+      display: block;
+      width: 100%;
+      min-height: 50px;
+      height: auto;
+      text-align: center;
+    }
   }
   &__td {
     box-sizing: border-box;
     height: 50px;
     padding: 10px;
-    border: 1px solid @gray_dark;
+    border: 1px solid @grey_dark;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
@@ -108,17 +108,17 @@
       padding-right: 0;
     }
       
-    // @media @bw768{
-    //   display: block;
-    //   width: 33.3333%;
-    // }
+    @media @bw768{
+      display: block;
+      width: 33.3333%;
+    }
   }
     
-  // &__footer {
-  //   @media @bw768{
-  //     display: flex;
-  //   }
-  // }
+  &__footer {
+    @media @bw768{
+      display: flex;
+    }
+  }
 }
   
 .ok { // Галочки

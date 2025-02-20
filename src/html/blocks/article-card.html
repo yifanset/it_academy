@@ -1,8 +1,18 @@
 <article class="article-card @@class">
   <a href="#" class="article-card__link">
-      <picture class="article-card__picture">
-          <img src="@@img" alt="@@alt" class="article-card__img" />
-      </picture>
+    <picture class="article-card__picture">
+        
+        <!-- Адаптив для смартфонной версии -->
+        <sourse type="image/webp" media="(max-width: 450px)" srcset="@@img_web"/>
+        <sourse media="(max-width: 450px)" srcset="@@img"/>
+
+        <!-- Адаптив для планшетной версии -->
+        <sourse type="image/webp" media="(max-width: 1169px)" srcset="@@img_tablet_webp"/>
+        <sourse media="(max-width: 1169px)" srcset="@@img_tablet"/>
+        <sourse type="image/webp" srcset="@@img_web"/>
+
+        <img src="@@img" alt="@@alt" class="article-card__img" />
+    </picture>
   </a>
 
   <div class="article-card__info">

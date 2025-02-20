@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+;<!DOCTYPE html>
 <html>
     @@include('blocks/head.html')
     <body class="body">
@@ -12,13 +12,24 @@
                     <div class="listing__events-list">
                         @@include('blocks/event-card.html')
                     </div>
-                        @@include('blocks/show-more.html')
+                        
+                    @@include('blocks/show-more.html')
 
                     <h2 class="listing__title section-title section-title__text">
                         Дополнительные услуги
                     </h2>
                     
                     @@include('blocks/table.html', {"class": "events__tariff-table"})
+
+                    <section class="events__block">
+
+                        @@include('blocks/offers.html', {"class": "events__offers"})
+
+                        @@include('blocks/info.html', {"class": "events__info"})
+
+                    </section>
+                    
+
 
 
                     

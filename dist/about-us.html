@@ -12,15 +12,13 @@
 <body class="body">
   <header class="page-header">
     <div class="page-header__container">
-      <!-- <a href="index.html" class="page-header__logo">
-            <img 
-                src="src/astets/svg-sprite/logo.svg"
-                class="page-header__logo-icon" 
-                alt="logo">
-        </a> -->
+
       <a href="index.html" class="page-header__logo">
-        <img src="assets/images/logo.svg" class="page-header__logo-icon" />
+        <svg class="page-header__logo-icon" width="202" height="147">
+          <use xlink:href="assets/icons/symbols.svg#logo"></use>
+        </svg>
       </a>
+
       <nav class="page-header__nav">
         <a href="events.html" class="page-header__nav-link">Мероприятия</a>
         <a href="blog.html" class="page-header__nav-link">Блог</a>
@@ -29,42 +27,19 @@
 
         <a href="#" class="page-header__nav-user-link">
           Александр С.
-          <svg class="page-header__user-icon" width="24" height="24">
+          <svg class="page-header__door" width="24" height="24">
             <use xlink:href="assets/icons/symbols.svg#door"></use>
           </svg>
         </a>
 
       </nav>
 
-      <!-- <div class="page-header__right-block">
-            <a href="#" class="page-header__nav-link">Войти</a>
-            <a href="#" class="page-header__nav-link">Александр С.</a>
-        </div> -->
-
-      <!-- <div class="page-header__right-block">
-            <a href="#" class="btn page-header__user-btn">
-                Войти
-                <svg class="page-header__user-icon" width="24" height="24">
-                    <use xlink:href="assets/icons/symbols.svg#user"></use>
-                </svg>
-            </a>
-        
-            <button
-              type="button"
-              class="page-header__nav-toggle"
-              id="js-navTogg1e">
-              <div class="page-header__nav-toggle-line"></div>
-            </button>
-        </div> -->
-
       <div class="page-header__right-block">
-        <a href="#" class="btn page-header__btn">Войти</a>
-        <!-- <svg class="page-header__user-icon" width="24" height="24">
-                  <use xlink:href="assets/icons/symbols.svg#user"></use>
-                </svg> -->
-        <img src="assets/icons/user.svg" class="page-header__user-icon" width="24" height="24" />
-
-
+        <a href="#" class="btn page-header__user-btn">Войти
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#user"></use>
+          </svg>
+        </a>
 
         <button type="button" class="page-header__nav-toggle" id="js-navToggle">
           <div class="page-header__nav-toggle-line"></div>
@@ -104,45 +79,92 @@
             молодым ребятам сделать первые шаги к своей мечте и рассказать
             всем о том, что их волнует.
             </р>
-            <!-- <div class="about__block3">
-            <picture class="about__block3-picture">
-                <img src="assets/images/pic3.jpg" alt="about3" class="about__block3-img">
-            </picture>
-            <div class="about__block3-text">
-                <a href="#" class="about__block3-link">
-                    Смотреть
-                </a>
-            </div>
-        </div> -->
         </div>
 
         <div class="about__bottom">
           <picture class="about__block3-picture">
             <img src="assets/images/pic3.jpg" alt="about3" class="about__block3-img">
           </picture>
-          <!-- <div class="aboutus__pics2">
-               <div class="aboutus__rectangle"></div>
-               <img src="assets/images/aboutus/fair.jpg" class="aboutus__img3"/>
-            </div> -->
 
           <div class="about__textblock2">
             <a class="about__textbotton">Мы уже успешно организовали и провели более 100 проектов. Посмотрите, как это было классно.</a>
             <a href="#" class="about__btn">Смотреть
-              <!-- <svg class="aboutus__see" width="91" height="60">
-                      <use xlink:href="assets/icons/symbols.svg#see"></use>
-                   </svg> -->
-              <img src="assets/icons/see.svg" width="91" height="60" alt="about3" class="about-arrowright">
+              <svg class="about-arrowright" width="91" height="60">
+                <use xlink:href="assets/icons/symbols.svg#arrowright"></use>
+              </svg>
             </a>
           </div>
-
-
-
-
         </div>
       </div>
 
-  </main>
+    </div>
 
+  </main>
+  <footer class="page-footer">
+    <div class="page-footer__liners">
+
+    </div>
+
+    <div class="page-footer__wrapper">
+
+    </div>
+
+    <div class="page-footer__block1">
+      <div class="page-footer__block1-links">
+        <a href="#" class="page-footer__block1-link">Календарь мероприятий</a>
+        <a href="#" class="page-footer__block1-link">Провести мероприятие</a>
+        <a href="#" class="page-footer__block1-link">Стать арендатором</a>
+        <a href="#" class="page-footer__block1-link">Наши проекты</a>
+        <a href="#" class="page-footer__block1-link">Контакты</a>
+      </div>
+      <form class="page-footer__subscribe-form subscribe-form">
+        <h4 class="subscribe-form__title">
+          Подпишись и будь в курсе происходящего
+        </h4>
+        <div class="subscribe-form__wrapper">
+          <div class="subscribe-form__field-wrapper">
+            <input name="email" type="email" placeholder="Email" class="subscribe-form__input field__input" required />
+          </div>
+          <button type="submit" class="subscribe-form__submit btn--footer">Подписаться</button>
+        </div>
+        <label class="subscribe-form__check check">
+          <input type="checkbox" name="agree" class="check__input" required checked />
+          <span class="check__mark"></span>
+          <span class="check__label">Согласен на обработку персональных данных</span>
+        </label>
+      </form>
+    </div>
+
+    <div class="page-footer__block2">
+      <div class="page-footer__socials socials">
+        <a href="#" class="page-footer__social socials__link">
+          <svg class="socials__icon" width="58" height="58">
+            <use xlink:href="assets/icons/symbols.svg#vk"></use>
+          </svg>
+        </a>
+        <a href="#" class="page-footer__social socials__link">
+          <svg class="socials__icon" width="58" height="58">
+            <use xlink:href="assets/icons/symbols.svg#insta"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="page-footer__block2-links">
+        <a href="#" class="page-footer__block2-link">Политика конфиденциальности</a>
+        <a href="#" class="page-footer__block2-link">Cookies</a>
+      </div>
+      <div class="page-footer__copyright">
+        @ Millenials 2022
+      </div>
+      <div class="page-footer__create">
+        Создание и продвижение
+        <a href="#" class="page-footer__create-link">
+          <svg class="page-footer__create-icon" width="56" height="17">
+            <use xlink:href="assets/icons/symbols.svg#tagree"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
