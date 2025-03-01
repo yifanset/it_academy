@@ -1,0 +1,23 @@
+<article class="blog-card @@class">
+    <a href="#" class = "blog-card__link">
+      <div class="blog-card__container">
+        <picture class="blog-card__picture">
+          <!--<source media="(max-width: 450px)" srcset="@@img"/>
+          <source type="(max-width: 450px)" srcset="@@img_web"/>
+          <source type="image/webp" media="(max-width: 1169px)" srcset="@img_tablet_webp"/>
+          <source media="(max-width: 1169px)" srcset="@@img_tablet"/>
+          <source type="image/webp" srcset="@@img_web"/>-->
+          <img src="@@img" alt="@@alt" class="blog-card__img" />
+        </picture>
+        <div class="blog-card__info">
+          <time datetime="@@datetime" class="blog-card__time">@@time</time>
+          <h1 class="blog-card__title">@@title</h1>
+            <p class="blog-card__description">@@descr</p>
+          </div>
+        <svg class="blog-card__icon" width="60" height="91">
+          <use xlink:href="assets/icons/symbols.svg#arrowdown"></use>
+        </svg>
+      </div>
+      <div class="blog-card__liners"></div>
+    </a>
+  </article>

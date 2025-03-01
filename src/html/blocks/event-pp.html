@@ -5,11 +5,10 @@
             <button
              type="button"
              title="Закрыть"
-             class="x-btn"
-             id="js-ppCloseBtn"
+             class="x-btn js-ppCloseBtn js-ppCloseBtn"
             >
-            <svg class="x-btn__icon">
-              <use xlink:href="assets/icons/symbols.svg#close"></use>
+            <svg class="x-btn__icon" width="60" height="60">
+              <use xlink:href="assets/icons/symbols.svg#x"></use>
             </svg>
             </button>
         </div>
@@ -22,7 +21,7 @@
                   <!-- Реализация радио-кнопок. -->
                   <div class="form__field form__field--w50 field">
                     <div class="radio">
-                    <h6 class="field__title">Формат Мероприятия</h6>
+                    <h6 class="field__title">Формат Мероприятия:</h6>
                       <label class="radio__item">
                         <input class="radio__input" type="radio" name="format" value="seminar" checked/>
                         <span class="radio__marker"></span>
@@ -79,8 +78,8 @@
                 <div class="form__section">
                   <label class="form__field form__field--mb30 field">
 
-                    <h6 class="form____section-title">
-                      Контактные данные.
+                    <h6 class="form__section-title">
+                      Контактные данные:
                     </h6>
                     <!-- Реализация ввода данных. -->
                     <div class="form__list" >
@@ -115,7 +114,7 @@
                         />
                       </label>
                       <label class="form__field form__field--w50 field">
-                        <span class="field__label">Email</span>
+                        <span class="field__label">Email*</span>
                         <input 
                         type="email" 
                         name="email" 
@@ -154,7 +153,7 @@
 
                   <div class="form__btns">
                     <p class = "form__btn btn">Отправить</p>
-                    <p class = "form__close-btn ">Закрыть</p>
+                    <p class = "form__close-btn js-ppCloseBtn">Закрыть</p>
                   </div>
             </form>
         </div>

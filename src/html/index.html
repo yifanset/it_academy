@@ -2,18 +2,19 @@
 <html lang="ru">  
   @@include('blocks/head.html')
   <body class="body">
+    
     @@include('blocks/page-header.html')
+    
     <main class="main">
       @@include('blocks/logo-quote.html')
-      @@include('blocks/offers.html')
-      @@include(('blocks/about.html'), {"class": "about__doit"})
 
-      <h2 class="listing__title section-title section-title__text">
-        Мероприятия
-      </h2>
-      <div class="events__listing--index listing">
-        @@include('blocks/event-card.html')
-      </div>
+      @@include('blocks/offers.html', {"class": "events__offers"})
+
+      @@include(('blocks/about.html'), {"class": "about__doit"})
+      
+      @@include('blocks/upcoming.html')
+      
+      @@include('blocks/blog-listing.html')
 
       @@include('blocks/contacts.html')
       
@@ -24,7 +25,10 @@
     @@include('blocks/page-footer.html')
     
     @@include('blocks/event-pp.html')
-    <!-- @@include('blocks/content.html') -->
     
+
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script src="scripts/swiper.min.js"></script>
+    <script src="scripts/main.min.js"></script>
   </body>
 </html>
