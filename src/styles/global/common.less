@@ -53,6 +53,19 @@ img {
   object-fit: cover;
 }
 
+ul {
+  padding-left: 0;  /* Убираем отступ слева */
+  list-style-position: inside; /* Чтобы маркеры были внутри блока списка */
+}
+
+ol {
+  padding-left: 0;  /* Убираем отступ слева */
+  list-style-position: inside; /* Чтобы маркеры были внутри блока списка */
+}
+
+li {
+  margin-bottom: 10px; /* Отступ между элементами */
+}
 input,
 textarea,
 select{
@@ -81,7 +94,13 @@ textarea:focus{
 }
 
 .bottom-link{
-  right: 0;
-  bottom: 0;
-  position: absolute;
+  padding: 15px 0 15px 40px;
+  display: flex;
+  justify-content: flex-end; /* Выравнивание по правому краю */
+  align-items: flex-end;     /* Выравнивание по нижнему краю */
+}
+
+.link{
+  font-weight: 600;
+  text-decoration: none;
 }

@@ -4,11 +4,54 @@
 <html lang="ru">
 
 <head>
+  <meta name="msapplication-TileColor" content="#dedede">
+  <meta name="msapplication-TileImage" content="/assets/favicons/ms-icon-144x144.png">
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
   <title>vitaliy</title>
+  <meta name="description" content="Арт—пространство для людей, горящих сердец и делом">
+  <meta name="keywords" content="Lenni Art, пространство, мероприятия">
+  <meta property="og:title" content="Lenni Art" />
+  <meta property="og:description" content="Арт пространство для людей, горящих сердцем и делом" />
+  <meta property="og:image" content="/assets/images/lenni-art.jpg">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lenni-art.ru/" />
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css" />
+
+
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/assets/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#bc3324">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Lenni Art">
+  <meta name="application-name" content="Lenni Art">
+  <meta name="theme-color" content="#dedede">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+
 </head>
 
 <body class="body">
@@ -23,8 +66,8 @@
 
       <nav class="page-header__nav">
         <a href="events.html" class="page-header__nav-link">Мероприятия</a>
-        <a href="blog.html" class="page-header__nav-link">Блог</a>
-        <a href="about-us.html" class="page-header__nav-link">О нас</a>
+        <a href="#" class="page-header__nav-link">Блог</a>
+        <a href="# " class="page-header__nav-link">О нас</a>
         <a href="#" class="page-header__nav-link">Контакты</a>
 
         <a href="#" class="page-header__nav-user-link">
@@ -129,13 +172,13 @@
         <a href="#" class="page-footer__block1-link">Наши проекты</a>
         <a href="#" class="page-footer__block1-link">Контакты</a>
       </div>
-      <form class="page-footer__subscribe-form subscribe-form">
+      <form action="https://jsonplaceholder.typicode.com/posts" class="page-footer__subscribe-form subscribe-form" id="js-subscribeForm">
         <h4 class="subscribe-form__title">
           Подпишись и будь в курсе происходящего
         </h4>
         <div class="subscribe-form__wrapper">
-          <div class="subscribe-form__field-wrapper">
-            <input name="email" type="email" placeholder="Email" class="subscribe-form__input field__input" required />
+          <div class="subscribe-form__field-wrapper ">
+            <input name="email" type="email" placeholder="Email" class="subscribe-form__input field__input js-subscribeEmail" required />
           </div>
           <button type="submit" class="subscribe-form__submit btn--footer">Подписаться</button>
         </div>

@@ -10,12 +10,10 @@
     padding-left: 24px;
     color: @black;
     cursor: pointer;
-    margin-bottom: 30px;
+
 
     &__input {
         .is-hidden();
-        // margin: 0 20px 0;
-
         &:checked {
           & ~ .check__mark {
             background-color: @black;
@@ -35,7 +33,49 @@
             }
           }
         }
+    }
+
+    &__input {
+      .is-hidden();
+      &:checked {
+           & ~ .check__mark--red{
+            background-color: @red_dark;
+            &::after {
+               content: "";
+               display: block;
+               position: absolute;
+               left: 7px;
+               top: 2px;
+               width: 6px;
+               height: 12px;
+               border-bottom: 2px solid @white;
+               border-right: 2px solid @white;
+               transform: rotate(45deg);
+             }
+         }
       }
+   }
+
+   &__input {
+    .is-hidden();
+    &:checked {
+         & ~ .check__mark--grey{
+          background-color: @grey;
+          &::after {
+             content: "";
+             display: block;
+             position: absolute;
+             left: 7px;
+             top: 2px;
+             width: 6px;
+             height: 12px;
+             border-bottom: 2px solid @white;
+             border-right: 2px solid @white;
+             transform: rotate(45deg);
+           }
+       }
+    }
+ }
     
     &__label {
       margin-left: 15px;
@@ -60,5 +100,25 @@
     background-color: transparent; //transparent - прозрачный.
     border: 1px solid @black;
     transition: background-color 0.2s;
+    &--red{
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      border: 1px solid @red_dark;
+    }
+    &--grey{
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      border: 1px solid @grey;
     }
   }
+}

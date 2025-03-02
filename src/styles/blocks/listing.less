@@ -43,14 +43,20 @@
   }
 
   &__showmore{
-        font-family: @font1;
-        font-weight: 600;
-        font-size: 16px;
-        text-transform: uppercase;
-        color: @black;
-        margin-top: 71px;
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;
+    flex-direction: column;
+    
+    &--text{
+      font-family: @font1;
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: @black;
+      margin-top: 71px;
+    }
   }
-
 
 
   &__title{
@@ -69,38 +75,6 @@
       margin-bottom: 80px;
     }
   }
+
 }
 
-// &__titleadditionalservices{
-//   margin-top: 100px;
-// }
-
-
-// .home {
-//     padding: 100px 0;
-                
-//     &__listing {
-//       margin-bottom: 95px;
-//     }
-//   }
-
-// .listing{
-//     box-sizing: border-box;
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     max-width: 1414px;
-//     margin: 0 auto;
-//     padding-left: 40px;
-//     padding-right: 40px;
-
-//     &__events-list{
-//         display: flex;
-//         flex-wrap: wrap;
-//         gap: 60px;
-//     }
-
-//     &__event-card {
-//       width: calc(33.333% - 40px);
-//   }
-// }

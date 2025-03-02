@@ -108,14 +108,6 @@ function jsCopy() {
     .pipe(gulp.dest("dist/scripts"));
 }
 
-// function copy() {
-//   return gulp
-//     .src(resources.static, {
-//       base: "src"
-//     })
-//     .pipe(gulp.dest("dist/"));
-// }
-
 function copy() {
   return gulp
     .src(resources.static, {

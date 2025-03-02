@@ -1,45 +1,45 @@
 (function () {
-    "use strict";
-    
-    // Реализация открытия навигации на мобилке
-    const root = document.documentElement;
-    const navToggle = document.querySelector("#js-navToggle");
-    navToggle.addEventListener("click", function () {
-    root.classList.toggle("show-nav");
-    });
+   "use strict";
 
-    // Реализация поп-апа при клике на "Провести мероприятие"
-    const eventPP = document.querySelector("#js-eventPP");
-    if (eventPP) {
-        const eventOpenBtn = document.querySelector("#js-eventOpenBtn");
-        const closeEventPP = function (event) {
-        function close() {
-            document.removeEventListener("keyup", closeEventPP);
-            eventPP.removeEventListener("click", closeEventPP);
-            root.classList.remove("show-event-popup");
-        }
-        switch (event.type) { // вот эта штука закрывает попап по клавише esc
-        case "keyup":
-          if (event.key === "Escape" || event.keyCode === 27) close();
-          break;
-        case "click":
-          if (
-            event.target === this ||
-            event.target.classList.contains("js-ppCloseBtn")
-          )
-            close();
-          break;
-        }
-        };
+   // Реализация навигации на мобилке
+   const root = document.documentElement;
+   const navToggle = document.querySelector("#js-navToggle");
+   navToggle.addEventListener("click", function () {
+   root.classList.toggle("show-nav");
+   });   
 
 
-        eventOpenBtn.addEventListener("click", function () {
-        root.classList.add("show-event-popup");
-        document.addEventListener("keyup", closeEventPP);
-        eventPP.addEventListener("click", closeEventPP);
-        });
+   // Реализация поп-апа при клике на "Провести мероприятие"
+   const eventPP = document.querySelector("#js-eventPP");
+   if (eventPP) {
+       const eventOpenBtn = document.querySelector("#js-eventOpenBtn");
+       const closeEventPP = function (event) {
+       function close() {
+           document.removeEventListener("keyup", closeEventPP);
+           eventPP.removeEventListener("click", closeEventPP);
+           root.classList.remove("show-event-popup");
+       }
+       switch (event.type) { // вот эта штука закрывает попап по клавише esc
+       case "keyup":
+         if (event.key === "Escape" || event.keyCode === 27) close();
+         break;
+       case "click":
+         if (
+           event.target === this ||
+           event.target.classList.contains("js-ppCloseBtn")
+         )
+           close();
+         break;
+       }
+       };
+
+
+       eventOpenBtn.addEventListener("click", function () {
+       root.classList.add("show-event-popup");
+       document.addEventListener("keyup", closeEventPP);
+       eventPP.addEventListener("click", closeEventPP);
+       });
     }
-
 
     // Реализация кнопок переключающих мероприятия на главной
     const swipers = document.querySelectorAll(".js-swiper");
@@ -260,7 +260,7 @@
             }
           ]
         }
-      ]; //здесь должен быть задан JSON со стилями
+      ];
       const mapCenter = new google.maps.LatLng(56.49387, 84.96274);
       const mapOptions = {
         center: mapCenter,
@@ -292,4 +292,489 @@
       });
     }
 
-})();
+    // Плагин для селектора (выбора) в форме.
+    const jsSelectric = $(".js-selectric");
+    if (jsSelectric.length) {
+      jsSelectric.selectric({
+        nativeOnMobile: false
+      });
+    }
+
+    // Плагин маски для номера телефона
+    const mobileMask = $('.js-mobileMask');
+    if (mobileMask.length) {
+      mobileMask.mask('+7 (000) 000 00 00', { placeholder: "+7 (___) ___ __ __" });
+    }
+
+
+    // Подключение календаря
+    const dateField = $(".js-dateField");
+    if (dateField.length) {
+      const pickerInit = function (pick) {
+        const dateInput = pick.find(".js-dateInput");
+        const dateDay = pick.find(".js-dateDay");
+        const dateMonth = pick.find(".js-dateMonth");
+        const dateYear = pick.find(".js-dateYear");
+        const dateConfig = {
+          autoClose: true,
+          minDate: new Date(),
+          navTitles: {
+            days: "MMMM <i>yyyy</i>"
+          },
+          onSelect: function ({ date }) {
+            dateDay.val(date ? ("0" + date.getDate()).slice(-2) : "");
+            dateMonth.val(date ? ("0" + (date.getMonth() + 1)).slice(-2) : "");
+            dateYear.val(date ? date.getFullYear() : "");
+          }
+        };
+        new AirDatepicker(dateInput[0], dateConfig);
+      };
+      $.each(dateField, function (i) {
+        pickerInit($(this));
+      });
+    }
+
+    // Валидация формы
+    const eventForm = $('#js-eventForm');
+    if (eventForm.length) {
+      eventForm.validate({
+        errorElement: "span"
+      });
+    }
+
+    const subscribeForm = $("#js-subscribeForm");
+    if (subscribeForm.length) {
+      const subscribeAction = subscribeForm.attr("action");
+      const subscribeEmail = subscribeForm.find("#js-subscribeEmail");
+      subscribeForm.validate({
+        errorElement: "span",
+        submitHandler: function (form, event) {
+          event.preventDefault();
+          $.ajax({
+            url: subscribeAction,
+            method: "POST",
+            data: {
+              email: subscribeEmail.val()
+            },
+            success: function () {
+              subscribeEmail.val("");
+              subscribeEmail.blur();
+              alert("Вы успешно подписались на рассылку новостей");
+            },
+            error: function () {
+              alert("Что-то пошло не так, попробуйте еще раз");
+            }
+          });
+        }
+      });
+      }
+   });
+
+
+
+   
+    document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById("checkbox10");
+    const rectangle = document.getElementById("Rectangle10");
+    const ellipse1 = document.getElementById("Ellipse10-1");
+    const ellipse2 = document.getElementById("Ellipse10-2");
+    const ellipse3 = document.getElementById("Ellipse10-3");
+    const ellipse4 = document.getElementById("Ellipse10-4");
+    const number = document.getElementById("number10");
+
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          rectangle.setAttribute("fill", "black");
+          ellipse1.setAttribute("fill", "black");
+          ellipse2.setAttribute("fill", "black");
+          ellipse3.setAttribute("fill", "black");
+          ellipse4.setAttribute("fill", "black");
+          number.setAttribute("fill", "white");
+        } else {
+          rectangle.setAttribute("fill", "none"); 
+          ellipse1.setAttribute("fill", "none");
+          ellipse2.setAttribute("fill", "none");
+          ellipse3.setAttribute("fill", "none");
+          ellipse4.setAttribute("fill", "none");
+          number.setAttribute("fill", "black");
+        }
+      });
+    });
+    
+     document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById("checkbox9");
+    const rectangle = document.getElementById("Rectangle9");
+    const ellipse1 = document.getElementById("Ellipse9-1");
+    const ellipse2 = document.getElementById("Ellipse9-2");
+    const ellipse3 = document.getElementById("Ellipse9-3");
+    const number = document.getElementById("number9");
+
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          rectangle.setAttribute("fill", "#BC3324");
+          ellipse1.setAttribute("fill", "#BC3324");
+          ellipse2.setAttribute("fill", "#BC3324");
+          ellipse3.setAttribute("fill", "#BC3324");
+          number.setAttribute("fill", "white");
+        } else {
+          rectangle.setAttribute("fill", "none"); 
+          ellipse1.setAttribute("fill", "none");
+          ellipse2.setAttribute("fill", "none");
+          ellipse3.setAttribute("fill", "none");
+          ellipse4.setAttribute("fill", "none");
+          number.setAttribute("fill", "#BC3324");
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.getElementById("checkbox11");
+      const rectangle = document.getElementById("Rectangle11");
+      const ellipse1 = document.getElementById("Ellipse11-1");
+      const ellipse2 = document.getElementById("Ellipse11-2");
+      const ellipse3 = document.getElementById("Ellipse11-3");
+      const ellipse4 = document.getElementById("Ellipse11-4");
+      const ellipse5 = document.getElementById("Ellipse11-5");
+      const ellipse6 = document.getElementById("Ellipse11-6");
+      const ellipse7 = document.getElementById("Ellipse11-7");
+      const number = document.getElementById("number11");
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          rectangle.setAttribute("fill", "#1F1E1E"); 
+          ellipse1.setAttribute("fill", "#1F1E1E");
+          ellipse2.setAttribute("fill", "#1F1E1E");
+          ellipse3.setAttribute("fill", "#1F1E1E");
+          ellipse4.setAttribute("fill", "#1F1E1E");
+          ellipse5.setAttribute("fill", "#1F1E1E");
+          ellipse6.setAttribute("fill", "#1F1E1E");
+          ellipse7.setAttribute("fill", "#1F1E1E");
+          number.setAttribute("fill", "white");
+          
+        } else {
+          rectangle.setAttribute("fill", "#none");
+          ellipse1.setAttribute("fill", "#none");
+          ellipse2.setAttribute("fill", "#none");
+          ellipse3.setAttribute("fill", "#none");
+          ellipse4.setAttribute("fill", "#none");
+          ellipse5.setAttribute("fill", "#none");
+          ellipse6.setAttribute("fill", "#none");
+          ellipse7.setAttribute("fill", "#none");
+          number.setAttribute("fill", "black");
+        }
+      });
+  });
+    
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById("checkbox8");
+    const rectangle = document.getElementById("Rectangle8");
+    const ellipse1 = document.getElementById("Ellipse8-1");
+    const ellipse2 = document.getElementById("Ellipse8-2");
+    const ellipse3 = document.getElementById("Ellipse8-3");
+    const number = document.getElementById("number8");
+
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          rectangle.setAttribute("fill", "#BC3324");
+          ellipse1.setAttribute("fill", "#BC3324");
+          ellipse2.setAttribute("fill", "#BC3324");
+          ellipse3.setAttribute("fill", "#BC3324");
+          number.setAttribute("fill", "white");
+        } else {
+          rectangle.setAttribute("fill", "none"); 
+          ellipse1.setAttribute("fill", "none");
+          ellipse2.setAttribute("fill", "none");
+          ellipse3.setAttribute("fill", "none");
+          ellipse4.setAttribute("fill", "none");
+          number.setAttribute("fill", "#A51505");
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.getElementById("checkbox6");
+      const rectangle = document.getElementById("Rectangle6");
+      const ellipse1 = document.getElementById("Ellipse6-1");
+      const ellipse2 = document.getElementById("Ellipse6-2");
+      const ellipse3 = document.getElementById("Ellipse6-3");
+      const ellipse4 = document.getElementById("Ellipse6-4");
+      const ellipse5 = document.getElementById("Ellipse6-5");
+      const ellipse6 = document.getElementById("Ellipse6-6");
+      const ellipse7 = document.getElementById("Ellipse6-7");
+      const number = document.getElementById("number6");
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          rectangle.setAttribute("fill", "#1F1E1E"); 
+          ellipse1.setAttribute("fill", "#1F1E1E");
+          ellipse2.setAttribute("fill", "#1F1E1E");
+          ellipse3.setAttribute("fill", "#1F1E1E");
+          ellipse4.setAttribute("fill", "#1F1E1E");
+          ellipse5.setAttribute("fill", "#1F1E1E");
+          ellipse6.setAttribute("fill", "#1F1E1E");
+          ellipse7.setAttribute("fill", "#1F1E1E");
+          number.setAttribute("fill", "white");
+          
+        } else {
+          rectangle.setAttribute("fill", "#none");
+          ellipse1.setAttribute("fill", "#none");
+          ellipse2.setAttribute("fill", "#none");
+          ellipse3.setAttribute("fill", "#none");
+          ellipse4.setAttribute("fill", "#none");
+          ellipse5.setAttribute("fill", "#none");
+          ellipse6.setAttribute("fill", "#none");
+          ellipse7.setAttribute("fill", "#none");
+          number.setAttribute("fill", "black");
+        }
+      });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById("checkbox7");
+    const rectangle = document.getElementById("Rectangle7");
+    const ellipse1 = document.getElementById("Ellipse7-1");
+    const ellipse2 = document.getElementById("Ellipse7-2");
+    const ellipse3 = document.getElementById("Ellipse7-3");
+    const ellipse4 = document.getElementById("Ellipse7-4");
+    const number = document.getElementById("number7");
+
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          rectangle.setAttribute("fill", "#BC3324");
+          ellipse1.setAttribute("fill", "#BC3324");
+          ellipse2.setAttribute("fill", "#BC3324");
+          ellipse3.setAttribute("fill", "#BC3324");
+          ellipse4.setAttribute("fill", "#BC3324");
+          number.setAttribute("fill", "white");
+        } else {
+          rectangle.setAttribute("fill", "none"); 
+          ellipse1.setAttribute("fill", "none");
+          ellipse2.setAttribute("fill", "none");
+          ellipse3.setAttribute("fill", "none");
+          ellipse4.setAttribute("fill", "none");
+          number.setAttribute("fill", "#A51505");
+        }
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.getElementById("checkbox1");
+      const rectangle = document.getElementById("Rectangle1");
+      const ellipse1 = document.getElementById("Ellipse1-1");
+      const ellipse2 = document.getElementById("Ellipse1-2");
+      const ellipse3 = document.getElementById("Ellipse1-3");
+      const ellipse4 = document.getElementById("Ellipse1-4");
+      const ellipse5 = document.getElementById("Ellipse1-5");
+      const number = document.getElementById("number1");
+  
+        checkbox.addEventListener('change', function() {
+          if (checkbox.checked) {
+            rectangle.setAttribute("fill", "#BC3324");
+            ellipse1.setAttribute("fill", "#BC3324");
+            ellipse2.setAttribute("fill", "#BC3324");
+            ellipse3.setAttribute("fill", "#BC3324");
+            ellipse4.setAttribute("fill", "#BC3324");
+            ellipse5.setAttribute("fill", "#BC3324");
+            number.setAttribute("fill", "white");
+          } else {
+            rectangle.setAttribute("fill", "none"); 
+            ellipse1.setAttribute("fill", "none");
+            ellipse2.setAttribute("fill", "none");
+            ellipse3.setAttribute("fill", "none");
+            ellipse4.setAttribute("fill", "none");
+            ellipse5.setAttribute("fill", "none");
+            number.setAttribute("fill", "#A51505");
+          }
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const checkbox = document.getElementById("checkbox4");
+        const rectangle = document.getElementById("Rectangle4");
+        const ellipse1 = document.getElementById("Ellipse4-1");
+        const ellipse2 = document.getElementById("Ellipse4-2");
+        const ellipse3 = document.getElementById("Ellipse4-3");
+        const ellipse4 = document.getElementById("Ellipse4-4");
+        const ellipse5 = document.getElementById("Ellipse4-5");
+        const number = document.getElementById("number4");
+    
+          checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
+              rectangle.setAttribute("fill", "#BC3324");
+              ellipse1.setAttribute("fill", "#BC3324");
+              ellipse2.setAttribute("fill", "#BC3324");
+              ellipse3.setAttribute("fill", "#BC3324");
+              ellipse4.setAttribute("fill", "#BC3324");
+              ellipse5.setAttribute("fill", "#BC3324");
+              number.setAttribute("fill", "white");
+            } else {
+              rectangle.setAttribute("fill", "none"); 
+              ellipse1.setAttribute("fill", "none");
+              ellipse2.setAttribute("fill", "none");
+              ellipse3.setAttribute("fill", "none");
+              ellipse4.setAttribute("fill", "none");
+              ellipse5.setAttribute("fill", "none");
+              number.setAttribute("fill", "#A51505");
+            }
+          });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const checkbox = document.getElementById("checkbox2");
+          const rectangle = document.getElementById("Rectangle2");
+          const ellipse1 = document.getElementById("Ellipse2-1");
+          const ellipse2 = document.getElementById("Ellipse2-2");
+          const ellipse3 = document.getElementById("Ellipse2-3");
+          const ellipse4 = document.getElementById("Ellipse2-4");
+          const ellipse5 = document.getElementById("Ellipse2-5");
+          const ellipse6 = document.getElementById("Ellipse2-6");
+          const ellipse7 = document.getElementById("Ellipse2-7");
+          const number = document.getElementById("number2");
+          checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
+              rectangle.setAttribute("fill", "#1F1E1E"); 
+              ellipse1.setAttribute("fill", "#1F1E1E");
+              ellipse2.setAttribute("fill", "#1F1E1E");
+              ellipse3.setAttribute("fill", "#1F1E1E");
+              ellipse4.setAttribute("fill", "#1F1E1E");
+              ellipse5.setAttribute("fill", "#1F1E1E");
+              ellipse6.setAttribute("fill", "#1F1E1E");
+              ellipse7.setAttribute("fill", "#1F1E1E");
+              number.setAttribute("fill", "white");
+              
+            } else {
+              rectangle.setAttribute("fill", "#none");
+              ellipse1.setAttribute("fill", "#none");
+              ellipse2.setAttribute("fill", "#none");
+              ellipse3.setAttribute("fill", "#none");
+              ellipse4.setAttribute("fill", "#none");
+              ellipse5.setAttribute("fill", "#none");
+              ellipse6.setAttribute("fill", "#none");
+              ellipse7.setAttribute("fill", "#none");
+              number.setAttribute("fill", "black");
+            }
+          });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const checkbox = document.getElementById("checkbox3");
+        const rectangle = document.getElementById("Rectangle3");
+        const ellipse1 = document.getElementById("Ellipse3-1");
+        const ellipse2 = document.getElementById("Ellipse3-2");
+        const ellipse3 = document.getElementById("Ellipse3-3");
+        const ellipse4 = document.getElementById("Ellipse3-4");
+        const ellipse5 = document.getElementById("Ellipse3-5");
+        const ellipse6 = document.getElementById("Ellipse3-6");
+        const ellipse7 = document.getElementById("Ellipse3-7");
+        const number = document.getElementById("number3");
+        checkbox.addEventListener('change', function() {
+          if (checkbox.checked) {
+            rectangle.setAttribute("fill", "#1F1E1E"); 
+            ellipse1.setAttribute("fill", "#1F1E1E");
+            ellipse2.setAttribute("fill", "#1F1E1E");
+            ellipse3.setAttribute("fill", "#1F1E1E");
+            ellipse4.setAttribute("fill", "#1F1E1E");
+            ellipse5.setAttribute("fill", "#1F1E1E");
+            ellipse6.setAttribute("fill", "#1F1E1E");
+            ellipse7.setAttribute("fill", "#1F1E1E");
+            number.setAttribute("fill", "white");
+            
+          } else {
+            rectangle.setAttribute("fill", "#none");
+            ellipse1.setAttribute("fill", "#none");
+            ellipse2.setAttribute("fill", "#none");
+            ellipse3.setAttribute("fill", "#none");
+            ellipse4.setAttribute("fill", "#none");
+            ellipse5.setAttribute("fill", "#none");
+            ellipse6.setAttribute("fill", "#none");
+            ellipse7.setAttribute("fill", "#none");
+            number.setAttribute("fill", "black");
+          }
+        });
+    });
+
+    function calculate() {
+      const redCheckboxes = document.querySelectorAll('.event__reserving-check--red input[type="checkbox"]');
+      const blackCheckboxes = document.querySelectorAll('.event__reserving-check input[type="checkbox"]');
+      let redCount = 0;
+      let blackCount = 0;
+      let totalCost = 0;
+    
+      redCheckboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          redCount += 1;
+        }
+      });
+
+      blackCheckboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          blackCount += 1;
+        }
+      });
+      
+      totalCost = blackCount * 1250 + redCount * 1400
+
+      return {
+        totalCost: totalCost,
+        redCount: redCount,
+        blackCount: blackCount
+      };
+    }
+      
+    
+    const totalCostElement = document.getElementById('totalCost');
+    const redDetailsElement = document.getElementById('redCostDetails');
+    const blackDetailsElement = document.getElementById('blackCostDetails');  
+    
+    
+    const redCheckboxes = document.querySelectorAll('.event__reserving-check--red input[type="checkbox"]');
+    const blackCheckboxes = document.querySelectorAll('.event__reserving-check input[type="checkbox"]');    
+    
+
+    redCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const results = calculate();
+        const redCount = results.redCount;
+        
+        // Создаем и добавляем строки "Кол-во - Стоимость"
+        let detailsHTMLred = '';
+    
+        if (redCount > 0) {
+          redDetail = `<p>${redCount} шт. | 1400 ₽ <span style="margin-left: 222px;"></span> ${redCount * 1400} ₽</p>`
+          detailsHTMLred += redDetail;
+        }
+      
+        redDetailsElement.innerHTML = detailsHTMLred; 
+      });
+    });
+
+    blackCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const results = calculate();
+        const blackCount = results.blackCount;
+        
+        // Создаем и добавляем строки "Кол-во - Стоимость"
+        let detailsHTMLblack = '';
+
+        if (blackCount > 0) {
+          blackDetail = `<p>${blackCount} шт. | 1250 P <span style="margin-left: 222px;"></span> ${blackCount * 1250} ₽</p>`
+          detailsHTMLblack += blackDetail;
+        }
+        
+        blackDetailsElement.innerHTML = detailsHTMLblack; 
+      });
+    });
+    redCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const results = calculate();
+        const total = results.totalCost;
+        totalCostElement.innerHTML = `Сумма <span style="margin-left: 35px;"></span> ${total} ₽`;
+      });
+    });
+    blackCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const results = calculate();
+        const total = results.totalCost;
+        totalCostElement.innerHTML = `Сумма <span style="margin-left: 35px;"></span> ${total} ₽`;
+      });
+    });
+    
+    

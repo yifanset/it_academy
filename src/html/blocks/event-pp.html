@@ -54,7 +54,7 @@
                       <span class="field__title">
                           Планируемое количество посетителей:
                       </span>
-                      <select name="amount" class="field__select">
+                      <select name="amount" class="field__select js-selectric">
                           <option value="20">до 20 человек</option>
                           <option value="50">от 20 до 100 человек</option>
                           <option value="100">от 100 до 500 человек</option>
@@ -62,15 +62,40 @@
                       </select>
                     </label>
 
-                    <div class="form__field field">
+                    <div class="form__field field js-dateField">
                       <span class="field__title">Дата проведения:</span>
-                        <div class="field__date-inputs">
-                          <input type="text" class="field__date-input" placeholder="ДД" readonly>
-                          <input type="text" class="field__date-input" placeholder="ММ" readonly>
-                          <input type="text" class="field__date-input field__date-input--w110" placeholder="ГГГГ" readonly>
+                        <div class="field__date">
+                          <div class="field__date-inputs">
+                            <input type="text"
+                            class="field__date-input js-dateDay"
+                            placeholder="ДД" 
+                            readonly
+                            />
+                            <input
+                            type="text"
+                            class="field__date-input js-dateMonth"
+                            placeholder="ММ"
+                            readonly
+                            />
+                            <input
+                            type="text"
+                            class="field__date-input field__date-input--w110 js-dateYear"
+                            placeholder="ГГГГ"
+                            readonly
+                            />
+                          </div>
+  
+                          <input
+                            class="field__date-picker js-dateInput"
+                            type="text"
+                            name="date"
+                            readonly
+                            required
+                          />
                         </div>
 
                     </div>
+                        
                   </div>
                 </div>
                 
@@ -108,8 +133,8 @@
                         <input 
                         type="tel" 
                         name="number" 
-                        placeholder="+7 (___) ___ __ __" 
-                        class="field__input" 
+                        placeholder="Телефон" 
+                        class="field__input js-mobileMask" 
                         required
                         />
                       </label>
